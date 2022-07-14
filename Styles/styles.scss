@@ -1,7 +1,7 @@
 //reset browser default
 
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -56,9 +56,9 @@ a {
 }
 header{
     min-height: 100vh;
-    font-family: 'Poppins', sans-serif;
     color: var(--color-white);
     overflow: hidden;
+    padding: 0 !important;
 }
 
 section{
@@ -107,9 +107,17 @@ section{
 }
 */
 
+.container{
+    display: none;
+    transform: translateY(-100%) scale(0);
+    transition: all .4s ease-in-out;
+    background-color: var(--color-primary);
+}
+
 .active{
     display: block;
     animation: appear 1s ease-in-out;
+    transform: translateY(0) scale(1);
     @keyframes appear {
         0%{
             transform: translateY(-100%) scaleY(0);
@@ -218,7 +226,7 @@ section{
             object-fit: cover;
             transition: all .4s ease-in-out;
             filter: grayscale(100%);
-            g:hover{
+            &:hover{
                 filter: grayscale(0);
             }
         }
@@ -245,12 +253,12 @@ section{
 /*About*/
 .about-container{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     padding-top: 3.5rem;
     padding-bottom: 5rem;
     .right-about{
        display: grid;
-       grid-template-columns: repeat(2,1fr);
+       grid-template-columns: repeat(2, 1fr);
        grid-gap: 2rem; 
        .about-item{
         border: 1px solid var(--color-grey-5);
@@ -309,7 +317,7 @@ section{
     padding-bottom: 4rem;
     .progress-bars{
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-gap: 2rem;
         .progress-bar{
             display: flex;
@@ -692,11 +700,13 @@ section{
         z-index: -1;
     }
     &:hover{
+        transition: all .4s ease-in-out;
         &::before{
             width: 100%;
             height: 100%;
             background-color: var(--color-secondary);
-            transform: translate(0);
+            transform: translateX(0);
+            transition: all .4s ease-in-out;
         }
     }
 }

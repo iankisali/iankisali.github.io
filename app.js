@@ -1,4 +1,4 @@
-const sections = document.querySelectorAll('.section');
+/*const sections = document.querySelectorAll('.section');
 const sectBtns = document.querySelectorAll('.controlls');
 const sectBtn = document.querySelectorAll('.control');
 const allSections = document.querySelector('.main-content');
@@ -39,8 +39,8 @@ function PageTransitions(params) {
     })
 }
 PageTransitions();
-
-/*(function () {
+*/
+(function () {
     [...document.querySelectorAll(".control")].forEach(button => {
         button.addEventListener("click", function() {
             document.querySelector(".active-btn").classList.remove("active-btn");
@@ -53,4 +53,3 @@ PageTransitions();
         document.body.classList.toggle("light-mode");
     })
 })();
-*/
